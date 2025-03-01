@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deletar Personagem</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: #d0eedf;
+        text-align: center;
+      }
+      h2 {
+        color: #3a6b49;
+        font-size: 7em;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        text-shadow: 5px 5px 7px #0e2c17;
+      }
+      h1 {
+        color: #000;
+        font-size: 2em;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      img {
+        width: 1195px;
+        height: 346px;
+      }
+      p,
+      label {
+        color: #3a6b49;
+        font-size: 1.5em;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      button {
+        background-color: #3a6b49;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        margin: 10px;
+        cursor: pointer;
+      }
+      button a {
+        color: #ffffff;
+        text-decoration: none;
+        border-width: 5px;
+        border-color: #000000;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      button a:hover {
+        color: #ffffff;
+      }
+      button:hover {
+        background-color: #648379;
+        color: #000;
+      }
+      li {
+        list-style-type: none;
+      }
+    </style>
+    <h1>
+      Você tem certeza que quer deletar o personagem {{ character.name }}?
+    </h1>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit">Deletar</button>
+      <button>
+        <a href="{% url 'personagem_lista' %}">Cancelar</a>
+      </button>
+    </form>
+  </body>
+</html>
